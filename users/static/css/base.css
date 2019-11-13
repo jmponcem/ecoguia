@@ -1,0 +1,26 @@
+h2{
+color: #79aec8;
+}
+form {
+    width: 500px;
+    height: auto;
+    border-style: solid;
+    margin-left: 5px;
+}
+
+form label {
+    display: inline-block;
+    width: 150px;
+}
+
+form input {
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 10px;
+}
+[type=submit], button {
+	background-color: #79aec8;
+	color: #f8f9fa;
+	padding: 4px;
+	margin: 4px;
+}
