@@ -5,7 +5,7 @@
 	<h2>Iniciar sesión</h2>
     {{ form.as_p }}
     {% csrf_token %}
-    <button type="submit">Login</button>
+    <button type="submit" id="ingresar" >Ingresar</button>
     <p><a href="{% url 'password_reset' %}">Olvido la contraseña</a></p>
     <a href="/register">Registrar usuario</a>
 </form>
