@@ -5,6 +5,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as do_login
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterForm
+from .models import Consulta
+from .forms import ConsultaForm
 
 def welcome(request):
     # Si estamos identificados devolvemos la portada
@@ -76,5 +78,66 @@ def logout(request):
 
 
 def index(request):
+    consultas = Consulta.objects(all) 
+    form = ConsultaForm()
+    return render(request, "users/Index.html", {'form': form})
     return render(request, "users/Index.html")
     return redirect('/index')
+
+def add(request):
+    # Creamos un formulario vacío
+    form = ConsultaForm()
+
+    # Comprobamos si se ha enviado el formulario
+    if request.method == "POST":
+        # Añadimos los datos recibidos al formulario
+        form = ConsultaForm(request.POST)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Guardamos el formulario pero sin confirmarlo,
+            # así conseguiremos una instancia para manejarla
+            instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+            instancia.save()
+            # Después de guardar redireccionamos a la lista
+            return redirect('/index')
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "users/Index.html", {'form': form})
+
+def edit(request, consulta_id):
+    # Recuperamos la instancia de la persona
+    instancia = Consulta.objects.get(id=consulta_id)
+
+    # Creamos el formulario con los datos de la instancia
+    form = ConsultaForm(instance=instancia)
+
+    # Comprobamos si se ha enviado el formulario
+    if request.method == "POST":
+        # Actualizamos el formulario con los datos recibidos
+        form = ConsultaForm(request.POST, instance=instancia)
+        # Si el formulario es válido...
+        if form.is_valid():
+            # Guardamos el formulario pero sin confirmarlo,
+            # así conseguiremos una instancia para manejarla
+            instancia = form.save(commit=False)
+            # Podemos guardarla cuando queramos
+            instancia.save()
+
+    # Si llegamos al final renderizamos el formulario
+    return render(request, "users/edit.html", {'form': form})
+
+def listar(request):
+    consultas = Consulta.objects.all()
+    form = ConsultaForm()
+    return render(request, "users/listar.html", {'consultas': consultas}, {'form': form})
+
+def delete(request, consulta_id):
+
+    # Recuperamos la instancia de la persona y la borramos
+    instancia = Consulta.objects.get(id=consulta_id)
+    instancia.delete()
+
+    # Después redireccionamos a la lista
+    return redirect('/listar')
+

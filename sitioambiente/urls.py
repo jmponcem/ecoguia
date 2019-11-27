@@ -22,8 +22,12 @@ urlpatterns = [
     path('register', views.register),
     path('login', views.login),
     path('logout', views.logout),
-    path('index', views.index),
+    #path('index', views.index),
     path('accounts/', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
+    path('index', views.add),
+    path('edit/<int:consulta_id>', views.edit),
+    path('listar', views.listar),
+    path('delete/<int:consulta_id>', views.delete),
 
 ]

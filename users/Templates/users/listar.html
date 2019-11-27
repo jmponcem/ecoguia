@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Filtro de consulta</title>
+  </head>
+  <body>
+    <h2>Lista de consultas</h2>
+
+    <ul>
+      {% for consulta in consultas %}
+      <li>
+        nombre:{{ consulta.nombre }}, apelllido:{{ consulta.apellido }}, correo:{{ consulta.correo }}, rut:{{ consulta.rut }}, telefono:{{ consulta.telefono }}, asunto:{{ consulta.asunto }}, mensaje:{{ consulta.mensaje }}
+        <a href="/edit/{{ consulta.id }}">Editar</a> |
+        <a href="/delete/{{ consulta.id}}" 
+          onClick="return confirm('¿Seguro que quieres borrar a {{consulta.nombre}}?');">
+          Borrar
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+  
+  </body>
+</html>

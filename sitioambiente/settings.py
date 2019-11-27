@@ -124,8 +124,8 @@ LOGIN_REDIRECT_URL = '/'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 25
-EMAIL_HOST_USER = 'el.joshe@gmail.com'
-EMAIL_HOST_PASSWORD = 'm@ximiz@r'
+EMAIL_HOST_USER = 'duocalumno0@gmail.com'
+EMAIL_HOST_PASSWORD = '@lumn02019'
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 

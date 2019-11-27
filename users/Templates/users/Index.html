@@ -15,30 +15,28 @@
   <script src="static/js/bootstrap.min.js"></script>
 
 
-  <title>Punto Verde</title>
+  <title>ECO-GUIA</title>
 </head>
 <body onload="startTime()">
 
   <nav class="navbar navbar-inverse bg-inverse navbar-dark bg-primary navbar-toggleable-sm fixed-top" >
     <button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <hr>Menu</hr>
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div id="hora" style="color:#A2EBE8 ;" style="text-align: center;">
-    </div>
-
-
+    
 
     <a class="navbar-brand" href="#">
-      <img src="static/img/Ico.svg" width="30" height="30" alt="Logo">
-      Punto Verde
-       
+      <img id="logoecoguia" src="static/img/logoecoguia.png" width="200px" height="200px" >       
     </a>
+    <div id="hora" style="color:#A2EBE8 ;">
+    </div>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      
     <div class="navbar-nav mr-auto text-center list-group" id="list-example">
       <a class="nav-item nav-link" href="#">Inicio</a>
       <a class="nav-item nav-link" href="#QuienesSomos">¿Quienes Somos?</a>
-      <a class="nav-item nav-link" href="#Reciclar">¿Que es reciclar?</a>
-      
+      <a class="nav-item nav-link" href="#Reciclar">¿Que es reciclar?</a>      
       <a class="nav-item nav-link" href="#InicioFormulario">Cont&aacutectanos</a>
       <a class="nav-item nav-link" href="/logout">Cerrar sesión</a>
     </div>
@@ -80,7 +78,8 @@
     <br>
     <div style="text-align: center;" class="s-title "><div class="s-component s-text"><h2 class="s-component-content s-font-title"><p>¿Quienes Somos?</p>
     
-      <p >Punto verde es una pagina que busca informar sobre buenas practicas  medio ambientales,para ayudar a descontaminar nuestro planeta. <strong>En Punto Verde </strong>Buscamos enseñar sobre  sistemas de reciclaje, puntos limpios, manejo de residuos,ayudamos a gestionar el reciclaje de <strong>maderas, metales, plásticos (incluyendo Plumavit), vidrio, neumáticos, cartón, pilas, textiles, cartón para bebidas, papel</strong>, entre muchos otros.</p><p> </p><p style="text-align:left"> </p><p style="text-align:left"><strong>Misión:</strong> Hacer conscientes a las personas sobre el manejo sustentable de sus residuos</p><p style="text-align:left"><strong>Visión:</strong> Dar a conocer podemos producir eficientemente. Impactando positivamente a las comunidades y naturaleza circundante</p><p style="text-align:left"><strong>Nuestra Pregunta:</strong> ¿Qué planeta queremos dejarle a nuestros hijos?</p>
+      <p >ECO GUIA es una pagina que nos brinda soluciónes para cubrir la falencia presente de recopilacion de información sobre las empresas dedicadas al rubro y sus áreas de cobertura de recolección ,para luego proporcionar y masificar la información a la ciudadanía.Debido a la falta de información los ciudadanos tienden a colapsar el punto de acopio que le correspondiente a su sector, si los ciudadanos contaran con la información necesaria  sobre los diversos puntos de acopio ,podrían acudir a otro centro de acopio cercano a su vivienda ,de esta manera permitiremos  que los lugares de acopio no se vean tan colapsados y el ciudadano se vería involucrado directamente en el cuidado del medio ambiente .
+. <strong>ECOGUIA </strong>Buscamos enseñar sobre  sistemas de reciclaje, puntos limpios, manejo de residuos,ayudamos a gestionar el reciclaje de <strong>maderas, metales, plásticos (incluyendo Plumavit), vidrio, neumáticos, cartón, pilas, textiles, cartón para bebidas, papel</strong>, entre muchos otros.</p><p> </p><p style="text-align:left"> </p><p style="text-align:left"><strong>Misión:</strong> Hacer conscientes a las personas sobre el manejo sustentable de sus residuos</p><p style="text-align:left"><strong>Visión:</strong> Dar a conocer podemos producir eficientemente. Impactando positivamente a las comunidades y naturaleza circundante</p><p style="text-align:left"><strong>Nuestra Pregunta:</strong> ¿Qué planeta queremos dejarle a nuestros hijos?</p>
 
     </div>
 
@@ -141,40 +140,70 @@
 
       </div>
 
+      <div>
+        <h2 id="InicioFormulario" style="text-align: center;"> Busca tu Punto Limpio mas cercano</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d856450.9807705312!2d-71.62044314939524!3d-33.01664843697622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1spunto%20limpio!5e0!3m2!1ses-419!2scl!4v1574812998451!5m2!1ses-419!2scl" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+      </div>  
+
     
 
 
 
 
 
-  <h2 id="InicioFormulario" style="text-align: center;"> Cont&aacutectanos</h2>
+  <!--h2 id="InicioFormulario" style="text-align: center;"> Cont&aacutectanos</h2>
   <form action="#" method="post" class="Formulario" onsubmit="return validarDatos();">
     <h4 class="TituloForm">Envianos tus consultas</h4>
-    <div class="ContenedorFormulario" id="Formulario">
-      <input type="text" id="Nombres" name="Nombre" placeholder="Nombres" class="input48" required >
-      <input type="text" id="Apellidos" name="Apellidos" placeholder="Apellidos" class="input48" required>
+    <div class="ContenedorFormulario" id="Formulario">   
+     
+      
+      <input type="text" id="nombre" name="Nombre" placeholder="Nombres" class="input48" required >
+      <input type="text" id="apellido" name="Apellidos" placeholder="Apellidos" class="input48" required>
       <input type="email" id="Correo" name="Correo" placeholder="Email@" class="input100" required>
       <input type="email" id="Correo2" name="Correo2" placeholder="Confirmar Email@" class="input100" required>
       <input type="text" id="Rut" name="Rut" placeholder="Rut" class="input48" oninput="checkRut(this)" required >
       <input type="text" id="Telefono" name="Telefono" placeholder="Telefono" class="input48" required>
       <input type="text" id="Asunto" name="Asunto" placeholder="Asunto"class="input48" required>
       <input type="text" id="Mensaje" name="Mensaje" placeholder="Mensaje"class="input100" required>
-      <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar" class="btnEnviar">
-
-
-
-
-
-
-
-
+      <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar" class="btnEnviar">    
     </div>
 
+  </form-->
+  <h2 id="InicioFormulario" style="text-align: center;"> Cont&aacutectanos</h2>
+  <form action="#" method="post" class="Formulario" onsubmit="return validarDatos();">
+    <h4 class="TituloForm">Envianos tus consultas</h4>
+    <div class="ContenedorFormulario" id="Formulario">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <button type="submit">Enviar</button>
+  </div>
   </form>
-  <footer>
+
+    <hr />
+    <!--a href="/listar">Listar consultas</a--> 
+    <!--h2>Lista de consultas</h2-->
+
+    <ul>
+      {% for consulta in consultas %}
+      <li>
+        {{ consulta.nombre }}, {{ consulta.apellido }}, {{ consulta.correo }}, {{ consulta.mensaje }}
+        <a href="/edit/{{ persona.id }}">Editar</a> |
+        <a href="/delete/{{ persona.id }}" 
+          onClick="return confirm('¿Seguro que quieres borrar a {{persona.nombre}}?');">
+          Borrar
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+   
+<footer>
   <div id="footer">
-    <p class="fot">2019 <strong>PUNTOVERDE</strong>/DESARROLADO JP-FC</p>
-    <img src="static/img/Facebook.png" width="30" height="30" alt="Logo" href="www.Facebook.com"; >
+    <p class="fot">2019 <strong>ECOGUIA</strong> 
+    <img id="logoecoguia" src="static/img/logoecoguia.png" width="100px" height="100px" >                          
+    <a href=""><img src="static/img/Facebook.png" width="30" height="30" alt="Logo"></a>
+    <a href=""><img src="static/img/insta.png" width="30" height="30" alt="Logo"></a>
+    <a href=""><img src="static/img/youtube.png" width="30" height="30" alt="Logo"></a>
+    </p>
   </div>
 </footer>
 

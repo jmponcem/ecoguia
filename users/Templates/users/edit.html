@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Editar persona</title>
+  </head>
+  <body>
+    <h2>Editar persona</h2>
+
+    <form method="POST">
+      {{ form.as_p }}
+      {% csrf_token %}
+      <button type="submit">Editar</button>
+    </form>
+
+    <hr />
+    <a href="/add">Crear persona</a> | <a href="/listar">Listar personas</a>
+  </body>
+</html>
